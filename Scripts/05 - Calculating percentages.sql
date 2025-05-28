@@ -1,7 +1,7 @@
 use datawarehouseanalytics;
 
 
--- Which category contribute to the most overall sales
+-- Finding which category contribute to the most overall sales
 select 
 	category,
     sum(sales_amount) as sales,
