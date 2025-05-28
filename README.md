@@ -7,3 +7,11 @@ Today we have a rather simple dataset but quite informative, about a fictional s
 
 ## 01 - Loading dataset:
 First we create empty tables for the dataset and then using load data infile to import each csv file into its respective table.
+
+## 02 - Time series analysis:
+Where we track change over time for a specific measure, in our case we calculate total sales amount over different periods to identify seasonality/growth over time.
+
+[Sample output]
+![Screenshot 2025-05-28 234755](https://github.com/user-attachments/assets/1312a3da-1895-4e68-847c-7f5709c69b9a)
+
+## 03 - Cumulative analysis.sql
