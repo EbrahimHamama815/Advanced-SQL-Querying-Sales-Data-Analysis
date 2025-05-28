@@ -3,7 +3,7 @@ use datawarehouseanalytics;
 
 -- Finding which category contribute to the most overall sales
 select 
-	category,
+    category,
     sum(sales_amount) as sales,
     concat(round((sum(sales_amount)*100)/(select sum(sales_amount) from gold_fact_sales),2),"%") as sales_percentage
 from gold_fact_sales f
