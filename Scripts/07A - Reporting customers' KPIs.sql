@@ -29,7 +29,7 @@ create view gold_report_customer as
  with base_query as 
  -- Query needed columns from the tables
 (select 
-	f.order_number,
+    f.order_number,
     f.product_key,
     f.order_date,
     f.sales_amount,
@@ -45,7 +45,7 @@ create view gold_report_customer as
  customer_aggregation as
  -- Customer aggregation: summarize key metrics at customer level
  (select 
-	customer_key,
+    customer_key,
     customer_number,
     customer_name,
     age,
@@ -60,23 +60,23 @@ create view gold_report_customer as
  
  -- Segmenting customers into category, and calculating some important KPIs
  select
-	customer_key,
+    customer_key,
     customer_number,
     customer_name,
     age,
     case 
-		when age < 20 then "Under 20"
+	when age < 20 then "Under 20"
         when age between 20 and 29 then "20-29"
         when age between 30 and 39 then "30-39"
         when age between 40 and 49 then "40-49"
         else "50 and Above" 
-	end as age_group,
+    end as age_group,
     case 
-		when lifespan_in_months >= 12 and total_sales > 5000 then "VIP"
+	when lifespan_in_months >= 12 and total_sales > 5000 then "VIP"
         when lifespan_in_months >= 12 and total_sales < 5000 then "Regular"
         else "New" 
-	end as customer_category,
-	last_order_date,
+     end as customer_category,
+    last_order_date,
     timestampdiff(month,last_order_date,curdate()) as recency,
     total_orders,
     total_sales,
@@ -84,11 +84,11 @@ create view gold_report_customer as
     total_products,
     lifespan_in_months,
     case 
-		when total_orders = 0 then 0
-		else total_sales/total_orders 
-	end as avg_order_value,
-	case 
-		when lifespan_in_months = 0 then total_sales
-		else total_sales/lifespan_in_months 
-	end as avg_monthly_spend
+	when total_orders = 0 then 0
+	else total_sales/total_orders 
+    end as avg_order_value,
+    case 
+	when lifespan_in_months = 0 then total_sales
+	else total_sales/lifespan_in_months 
+    end as avg_monthly_spend
 from customer_aggregation;
