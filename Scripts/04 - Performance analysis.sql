@@ -1,6 +1,7 @@
 use datawarehouseanalytics;
 
--- comparing yearly product sales to their average:
+
+-- Comparing yearly product sales to their average:
 with yearly_product_sales as
 (select 
 	year(f.order_date) as order_year,
@@ -20,11 +21,12 @@ select
     case 
 		when sales-round(avg(sales) over(partition by product_name)) > 0 then "Above Average" 
         when sales-round(avg(sales) over(partition by product_name)) = 0 then "Average"
-        else "Below Average" end as avg_change
+        else "Below Average" 
+	end as avg_change
 from yearly_product_sales
 order by 2,1;
-
--- comparing yearly product sales to their previous year (Year-over-Year Analysis):
+-- =============================================================================
+-- Comparing yearly product sales to their previous year (Year-over-Year Analysis):
 with yearly_product_sales as
 (select 
 	year(f.order_date) as order_year,
@@ -44,6 +46,7 @@ select
     case 
 		when sales-lag(sales) over(partition by product_name order by order_year) > 0 then "Increase" 
         when sales-lag(sales) over(partition by product_name order by order_year) < 0 then "Decrease"
-        else "No Change" end as prev_year_change
+        else "No Change" 
+	end as prev_year_change
 from yearly_product_sales
 order by 2,1;

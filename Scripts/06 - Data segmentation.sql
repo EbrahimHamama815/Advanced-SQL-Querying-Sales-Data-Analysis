@@ -1,7 +1,7 @@
 use datawarehouseanalytics;
 
 
--- segment products into cost ranges and count how many products fall into each segment
+-- Segment products into cost ranges and count how many products fall into each segment
 with product_segments as 
 (select 
 	product_key,
@@ -19,8 +19,7 @@ select cost_range, count(product_key) as total_products
 from product_segments
 group by 1
 order by 2 desc;
-
-
+-- =============================================================================
 -- group customers into three segments based on their spending behaviours
 -- 		VIP: customers with at least 12 months of history and spending more than 5000$
 -- 		Regular: customers with at least 12 months of history and spending 5000$ or less

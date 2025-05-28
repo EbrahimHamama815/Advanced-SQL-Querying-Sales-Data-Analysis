@@ -24,9 +24,10 @@ Highlights:
     - average monthly spend (total sales/ number of months)
 ============================================================
 */
+
 create view gold_report_customer as
  with base_query as 
- -- retrieve core columns from table
+ -- Query needed columns from the tables
 (select 
 	f.order_number,
     f.product_key,
@@ -42,7 +43,7 @@ create view gold_report_customer as
  where order_date is not null),
  
  customer_aggregation as
- -- customer aggregation: summarize key metrics at customer level
+ -- Customer aggregation: summarize key metrics at customer level
  (select 
 	customer_key,
     customer_number,
@@ -57,7 +58,7 @@ create view gold_report_customer as
  from base_query
  group by 1,2,3,4)
  
- -- segmenting customers into category, and calculating some important KPIs
+ -- Segmenting customers into category, and calculating some important KPIs
  select
 	customer_key,
     customer_number,
@@ -84,8 +85,10 @@ create view gold_report_customer as
     lifespan_in_months,
     case 
 		when total_orders = 0 then 0
-		else total_sales/total_orders end as avg_order_value,
+		else total_sales/total_orders 
+	end as avg_order_value,
 	case 
 		when lifespan_in_months = 0 then total_sales
-		else total_sales/lifespan_in_months end as avg_monthly_spend
+		else total_sales/lifespan_in_months 
+	end as avg_monthly_spend
 from customer_aggregation;

@@ -1,5 +1,6 @@
 use datawarehouseanalytics;
 
+
 -- Calculating running total sales over the whole time period (months)
 select
 	order_date,
@@ -11,7 +12,7 @@ from gold_fact_sales
 where order_date is not null
 group by 1
 order by 1) t1;
-
+-- =============================================================================
 -- Calculating running total sales for each year separately
 select
 	order_date,
@@ -23,7 +24,7 @@ from gold_fact_sales
 where order_date is not null
 group by 1
 order by 1) t1;
-
+-- =============================================================================
 -- Calculating moving average of price monthly
 select
 	order_date,

@@ -1,6 +1,8 @@
 use datawarehouseanalytics;
 
 
+-- Creating the tables and loading each file into its respective table
+
 CREATE TABLE gold_dim_customers(
 	customer_key int,
 	customer_id int,
@@ -18,7 +20,7 @@ TRUNCATE TABLE gold_dim_customers;
 load data infile 'gold_dim_customers.csv' into table gold_dim_customers
 FIELDs TERMINATed by ','
 ignore 1 lines;
--- --------------------------------------------------------------------------
+-- =============================================================================
 CREATE TABLE gold_dim_products(
 	product_key int ,
 	product_id int ,
@@ -37,7 +39,7 @@ TRUNCATE TABLE gold_dim_products;
 load data infile 'gold_dim_products.csv' into table gold_dim_products
 FIELDs TERMINATed by ','
 ignore 1 lines;
--- --------------------------------------------------------------------------
+-- =============================================================================
 CREATE TABLE gold_fact_sales(
 	order_number nvarchar(50),
 	product_key int,

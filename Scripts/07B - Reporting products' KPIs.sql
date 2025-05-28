@@ -1,5 +1,6 @@
 use datawarehouseanalytics;
 
+
 /*
 ============================================================
 Product Report
@@ -23,10 +24,9 @@ Highlights:
 ============================================================
 */
 
-
 create view gold_report_products as
 with base_query as
--- getting essential fields
+-- Getting essential fields
 (select 
 	f.order_number,
     f.order_date,
@@ -43,7 +43,7 @@ with base_query as
  where order_date is not null),
  
  product_aggregation as
- -- performing the necessary aggregations
+ -- Performing the necessary aggregations
  (select
 	product_key,
     product_name,
@@ -60,7 +60,7 @@ with base_query as
 from base_query
 group by 1,2,3,4,5)
 
--- segmenting products by revenue, and calculating some important KPIs
+-- Segmenting products by revenue, and calculating some important KPIs
 select 
 	product_key,
     product_name,
@@ -89,4 +89,3 @@ select
         else total_sales/lifespan_in_months
 	end as avg_monthly_revenue
 from product_aggregation;
-
