@@ -9,10 +9,10 @@ Today we have a rather simple dataset but quite informative, about a fictional s
 First we create empty tables for the dataset and then using load data infile to import each csv file into its respective table.
 
 ## 02 - Time series analysis:
-Where we track change over time for a specific measure, in our case we calculate total sales amount over different periods to identify seasonality/growth over time.
+Where we track change over time for a specific measure, in our case we calculate total sales amount over different periods to identify seasonality/growth over time, Sample output:
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1312a3da-1895-4e68-847c-7f5709c69b9a" alt="image"/>
+  <img src="https://github.com/user-attachments/assets/896db958-236c-4c7b-bb99-1898a4d66819" alt="image"/>
 </p>
 
 ## 03 - Cumulative analysis.sql
