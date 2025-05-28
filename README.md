@@ -18,5 +18,7 @@ Where we track change over time for a specific measure, in our case we calculate
 ## 03 - Cumulative analysis:
 In this section we aggregate the data progressively over time to help understand wether the business is growing or declining, using cumulative measures like running totals and moving averages, sample output:
 
-![Screenshot 2025-05-29 001347](https://github.com/user-attachments/assets/4203944f-e1f3-4ea4-b991-17f74d060666)
-![Screenshot 2025-05-29 001414](https://github.com/user-attachments/assets/f288e965-dcfb-4f44-ba3a-5b5137db5cc9)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4203944f-e1f3-4ea4-b991-17f74d060666" alt="image"/>
+  <img src="https://github.com/user-attachments/assets/f288e965-dcfb-4f44-ba3a-5b5137db5cc9" alt="image"/>
+</p>
