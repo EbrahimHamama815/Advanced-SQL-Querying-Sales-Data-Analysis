@@ -24,10 +24,34 @@ In this section we aggregate the data progressively over time to help understand
 </p>
 
 ## 04 - Performance analysis:
-It is about comaring a current value of a measure to a target value to help measure success and compare performance, for example comparing each year sales to the overall average sales, or current year sales to the previous year to track growth. Sample output:
+It is about comparing a current value of a measure to a target value to help measure success and compare performance, for example comparing each year sales to the overall average sales, or current year sales to the previous year to track growth. Sample output:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/7df152a6-a5b6-47e0-b2dd-1193bb5c6dc2" alt="image"/>
   <img src="https://github.com/user-attachments/assets/9f85f154-100e-480a-8dce-dcd03d271184" alt="image"/>
 </p>
 
+## 05 - Calculating percentages:
+Percentages or part-to-whole analysis is really important in analyzing categorical data in order to indicate how an individual part is performing compared to the overall, in general it shows how each category affect business groth the most. Sample output:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fe5c4195-c440-4b56-976b-9e5ce7773ea5" alt="image"/>
+</p>
+
+## 06 - Data segmentation:
+Where we group data into specific ranges to help understand the correlation between two measures, in our example we goup products by their cost ranges and group customers into 3 categories based on their spendings and activity. Sample output:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bdd8165d-2794-4d2a-8c2d-e2aa793a25af" alt="image"/>
+  <img src="https://github.com/user-attachments/assets/94ed9f90-2d1c-4c4a-a9f1-2120aad91a26" alt="image"/>
+</p>
+
+07 - Reporting:
+Finally we combine everything we created so far into one single table (Report) cotaining some essential measures, data grouping/categorization and important KPIs. Such table will be ready to be exported to any visualization software to an insightful dashboard about the dataset. In our case we create a two reports: A report for customer data, and a report for products summary. Sample output:
+
+![Screenshot 2025-05-29 052726](https://github.com/user-attachments/assets/552c5c7a-00ed-4c33-bb0a-f05054f9c02f)
+
+![Screenshot 2025-05-29 053020](https://github.com/user-attachments/assets/1211360d-1068-47dd-8503-e4eba1f4bacc)
+
+
+### All the queries used in this project are in the Scripts folder.
