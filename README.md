@@ -54,4 +54,4 @@ Finally we combine everything we created so far into one single table (Report) c
 ![Screenshot 2025-05-29 053020](https://github.com/user-attachments/assets/1211360d-1068-47dd-8503-e4eba1f4bacc)
 
 
-### All the queries used in this project are in the Scripts folder.
+##### All the queries used in this project are in the Scripts folder.
