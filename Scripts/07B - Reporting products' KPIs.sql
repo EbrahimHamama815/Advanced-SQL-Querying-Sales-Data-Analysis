@@ -82,10 +82,10 @@ select
     avg_selling_price,
     case
 	when total_orders = 0 then 0
-        else total_sales/total_orders
+        else round(total_sales/total_orders,2)
     end as avg_order_revenue,
     case
 	when lifespan_in_months = 0 then total_sales
-        else total_sales/lifespan_in_months
+        else round(total_sales/lifespan_in_months,2)
     end as avg_monthly_revenue
 from product_aggregation;
